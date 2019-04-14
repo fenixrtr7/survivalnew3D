@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.Audio;
-#if UNITY_EDITOR
+#if UNITY_EDITOR  // No compilara para las otras pltaformas
 using UnityEditor;
 #endif
 
