@@ -99,10 +99,15 @@ namespace CompleteProject
             playerMovement.enabled = false;
             playerShooting.enabled = false;
         }
-
-
-        public void RestartLevel ()
+        
+        public void OnRestartLevel()
         {
+            StartCoroutine(RestartLevel());
+        }
+
+        IEnumerator RestartLevel()
+        {
+            yield return new WaitForSeconds(4);
             // Reload the level that is currently loaded.
             SceneManager.LoadScene (0);
         }

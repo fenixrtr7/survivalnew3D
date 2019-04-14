@@ -9,7 +9,7 @@ namespace CompleteProject
         public float sinkSpeed = 2.5f;              // The speed at which the enemy sinks through the floor when dead.
         public int scoreValue = 10;                 // The amount added to the player's score when the enemy dies.
         public AudioClip deathClip;                 // The sound to play when the enemy dies.
-
+        public Sprite icon;
 
         Animator anim;                              // Reference to the animator.
         AudioSource enemyAudio;                     // Reference to the audio source.
@@ -30,7 +30,11 @@ namespace CompleteProject
             // Setting the current health when the enemy first spawns.
             currentHealth = startingHealth;
         }
-
+        
+        public int GetHealthPercentage()
+        {
+            return 100 * currentHealth / startingHealth;
+        }
 
         void Update ()
         {
