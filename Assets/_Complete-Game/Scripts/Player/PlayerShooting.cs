@@ -2,6 +2,7 @@
 using UnitySampleAssets.CrossPlatformInput;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 namespace CompleteProject
 {
@@ -77,7 +78,7 @@ namespace CompleteProject
 
 #if !MOBILE_INPUT
             // If the Fire1 button is being press and it's time to fire...
-            if (Input.GetButton("Fire1") && timer >= timeBetweenBullets && Time.timeScale != 0)
+            if (Input.GetButton("Fire1") && timer >= timeBetweenBullets && Time.timeScale != 0 && !EventSystem.current.IsPointerOverGameObject(-1))
             {
                 // ... shoot the gun.
                 Shoot();
